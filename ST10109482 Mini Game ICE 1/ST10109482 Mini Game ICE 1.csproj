@@ -119,6 +119,11 @@
   <ItemGroup>
     <None Include="Resources\start.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="backgroundSong.wav" />
+    <Content Include="cpuvoice.mp3" />
+    <Content Include="speech.mp3" />
+    <Content Include="startvoice.mp3" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

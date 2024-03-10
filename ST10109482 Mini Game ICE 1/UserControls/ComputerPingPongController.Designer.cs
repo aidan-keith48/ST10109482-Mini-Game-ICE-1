@@ -31,21 +31,19 @@
             this.components = new System.ComponentModel.Container();
             this.PongTimer = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.playerOneNameTxt = new System.Windows.Forms.TextBox();
-            this.playerTwoNameTxt = new System.Windows.Forms.TextBox();
             this.startBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.player1scoreLbl = new System.Windows.Forms.Label();
             this.cpuscoreLbl = new System.Windows.Forms.Label();
             this.Player1 = new System.Windows.Forms.PictureBox();
             this.CPU = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Ball = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Player1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CPU)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ball)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // PongTimer
@@ -66,18 +64,6 @@
             this.label1.TabIndex = 14;
             this.label1.Text = "Enter Player One Name:";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.SkyBlue;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(213, 480);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(489, 51);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Enter Player Two Name:";
-            // 
             // playerOneNameTxt
             // 
             this.playerOneNameTxt.Location = new System.Drawing.Point(761, 361);
@@ -86,17 +72,9 @@
             this.playerOneNameTxt.Size = new System.Drawing.Size(319, 50);
             this.playerOneNameTxt.TabIndex = 16;
             // 
-            // playerTwoNameTxt
-            // 
-            this.playerTwoNameTxt.Location = new System.Drawing.Point(761, 481);
-            this.playerTwoNameTxt.Multiline = true;
-            this.playerTwoNameTxt.Name = "playerTwoNameTxt";
-            this.playerTwoNameTxt.Size = new System.Drawing.Size(319, 50);
-            this.playerTwoNameTxt.TabIndex = 17;
-            // 
             // startBtn
             // 
-            this.startBtn.Location = new System.Drawing.Point(761, 592);
+            this.startBtn.Location = new System.Drawing.Point(761, 470);
             this.startBtn.Name = "startBtn";
             this.startBtn.Size = new System.Drawing.Size(319, 61);
             this.startBtn.TabIndex = 18;
@@ -155,15 +133,6 @@
             this.CPU.TabIndex = 21;
             this.CPU.TabStop = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.SkyBlue;
-            this.pictureBox1.Location = new System.Drawing.Point(181, 212);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1081, 483);
-            this.pictureBox1.TabIndex = 19;
-            this.pictureBox1.TabStop = false;
-            // 
             // Ball
             // 
             this.Ball.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -175,6 +144,15 @@
             this.Ball.TabIndex = 13;
             this.Ball.TabStop = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.SkyBlue;
+            this.pictureBox1.Location = new System.Drawing.Point(181, 212);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1081, 392);
+            this.pictureBox1.TabIndex = 19;
+            this.pictureBox1.TabStop = false;
+            // 
             // ComputerPingPongController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -185,21 +163,19 @@
             this.Controls.Add(this.CPU);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.startBtn);
-            this.Controls.Add(this.playerTwoNameTxt);
             this.Controls.Add(this.playerOneNameTxt);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Ball);
             this.DoubleBuffered = true;
             this.Name = "ComputerPingPongController";
-            this.Size = new System.Drawing.Size(1452, 837);
+            this.Size = new System.Drawing.Size(1453, 837);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyIsDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyIsUp);
             ((System.ComponentModel.ISupportInitialize)(this.Player1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CPU)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ball)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,16 +185,14 @@
 
         private System.Windows.Forms.Timer PongTimer;
         private System.Windows.Forms.PictureBox Ball;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox playerOneNameTxt;
-        private System.Windows.Forms.TextBox playerTwoNameTxt;
         private System.Windows.Forms.Button startBtn;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox CPU;
         private System.Windows.Forms.PictureBox Player1;
         private System.Windows.Forms.Label player1scoreLbl;
         private System.Windows.Forms.Label cpuscoreLbl;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,9 +14,7 @@ namespace ST10109482_Mini_Game_ICE_1.UserControls
 {
     public partial class ComputerPingPongController : UserControl
     {
-
-        string playerOneName = "";
-        string playerTwoName = "";
+        string playerOneName = "";       
 
         int ballxSpeed = 4;
         int ballySpeed = 4;
@@ -32,23 +32,20 @@ namespace ST10109482_Mini_Game_ICE_1.UserControls
         int[] i = { 5, 6, 8, 9 };
         int[] j = { 10, 9, 8, 11, 12 };
 
-        
-
-
         public ComputerPingPongController()
         {
             InitializeComponent();
-            PongTimer.Stop();
+            PongTimer.Stop();            
         }
 
-        //-----------------------------------------------------
+        //-----------------------------------------------------       
 
         private void GameTimerEvent(object sender, EventArgs e)
         {
             this.MainEvent();
-        }       
+        }
+      
 
-       
         //-----------------------------------------------------
 
         private void KeyIsDown(object sender, KeyEventArgs e)
@@ -126,17 +123,14 @@ namespace ST10109482_Mini_Game_ICE_1.UserControls
 
         private void startBtn_Click(object sender, EventArgs e)
         {
-            playerOneName = playerOneNameTxt.Text;
-            playerTwoName = playerTwoNameTxt.Text;
+            playerOneName = playerOneNameTxt.Text;            
             PongTimer.Start();
-            startBtn.Dispose();
-            playerTwoNameTxt.Dispose();
+            startBtn.Dispose();            
             playerOneNameTxt.Dispose();
-            label1.Dispose();
-            label2.Dispose();
+            label1.Dispose();            
             this.pictureBox1.Dispose();
             this.label3.Dispose();
-
+            
         }
         //-----------------------------------------------------
 
@@ -148,7 +142,7 @@ namespace ST10109482_Mini_Game_ICE_1.UserControls
             Ball.Left -= ballxSpeed;
 
             player1scoreLbl.Text = $"{playerOneName}: {player1_score}";
-            cpuscoreLbl.Text = $"{playerTwoName}: {cpuScore}";
+            cpuscoreLbl.Text = $"CPU: {cpuScore}";
 
 
             if (Ball.Top < 0 || Ball.Bottom > this.ClientSize.Height)
@@ -161,6 +155,7 @@ namespace ST10109482_Mini_Game_ICE_1.UserControls
                 Ball.Left = 300;
                 ballxSpeed = -ballxSpeed;
                 cpuScore++;
+                ChangeFormColor();
             }
 
             if (Ball.Right > this.ClientSize.Width + 2)
@@ -168,6 +163,7 @@ namespace ST10109482_Mini_Game_ICE_1.UserControls
                 Ball.Left = 300;
                 ballxSpeed = -ballxSpeed;
                 player1_score++;
+                ChangeFormColor();
             }
 
             if (CPU.Top <= 1)
@@ -219,5 +215,26 @@ namespace ST10109482_Mini_Game_ICE_1.UserControls
                 GameOver("Player 1 Wins");
             }
         }
+
+        //-----------------------------------------------------
+
+        private void ChangeFormColor()
+        {
+            Random random = new Random();
+
+            int red = random.Next(0,256); // Generate a random value between 0 and 255 for red component
+            int green = random.Next(0,256); // Generate a random value between 0 and 255 for green component
+            int blue = random.Next(0,256); // Generate a random value between 0 and 255 for blue component
+
+            // Create a new Color object with the random RGB values
+            Color randomColor = Color.FromArgb(red, green, blue);
+
+            // Set the form's background color to the random color
+            this.BackColor = randomColor;            
+        }
+
+        //-----------------------------------------------------
     }
 }
+
+//----------------------------------------------------End of File------------------------------------------------

@@ -36,7 +36,7 @@ namespace ST10109482_Mini_Game_ICE_1.UserControls
         public MuiltiplayerPingPongController()
         {
             InitializeComponent();
-            PongTimer.Stop();
+            PongTimer.Stop();            
         }
 
         //-----------------------------------------------------
@@ -69,6 +69,7 @@ namespace ST10109482_Mini_Game_ICE_1.UserControls
                 Ball.Left = 300;
                 ballxSpeed = -ballxSpeed;
                 player2_score++;
+                ChangeFormColor();
             }
 
             if (Ball.Right > this.ClientSize.Width + 2)
@@ -76,6 +77,7 @@ namespace ST10109482_Mini_Game_ICE_1.UserControls
                 Ball.Left = 300;
                 ballxSpeed = -ballxSpeed;
                 player1_score++;
+                ChangeFormColor();
             }
 
             if (goDown && Player1.Top + Player1.Height < this.ClientSize.Height)
@@ -234,6 +236,23 @@ namespace ST10109482_Mini_Game_ICE_1.UserControls
 
         //-----------------------------------------------------
 
+        private void ChangeFormColor()
+        {
+            Random random = new Random();
 
+            int red = random.Next(0, 256); // Generate a random value between 0 and 255 for red component
+            int green = random.Next(0, 256); // Generate a random value between 0 and 255 for green component
+            int blue = random.Next(0, 256); // Generate a random value between 0 and 255 for blue component
+
+            // Create a new Color object with the random RGB values
+            Color randomColor = Color.FromArgb(red, green, blue);
+
+            // Set the form's background color to the random color
+            this.BackColor = randomColor;
+        }
+
+        //-----------------------------------------------------
     }
 }
+
+//-------------------------------------------------End of File------------------------------------------------

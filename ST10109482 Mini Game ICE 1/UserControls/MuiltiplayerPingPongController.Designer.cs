@@ -42,6 +42,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Ball = new System.Windows.Forms.PictureBox();
             this.PongTimer = new System.Windows.Forms.Timer(this.components);
+            this.instructoinLbl = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Player1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Player2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -154,7 +156,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.SkyBlue;
             this.pictureBox1.Location = new System.Drawing.Point(184, 239);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1081, 483);
+            this.pictureBox1.Size = new System.Drawing.Size(1081, 499);
             this.pictureBox1.TabIndex = 31;
             this.pictureBox1.TabStop = false;
             // 
@@ -175,10 +177,31 @@
             this.PongTimer.Interval = 20;
             this.PongTimer.Tick += new System.EventHandler(this.GameTimerEvent);
             // 
+            // instructoinLbl
+            // 
+            this.instructoinLbl.AutoSize = true;
+            this.instructoinLbl.BackColor = System.Drawing.Color.SkyBlue;
+            this.instructoinLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.instructoinLbl.Location = new System.Drawing.Point(746, 446);
+            this.instructoinLbl.Name = "instructoinLbl";
+            this.instructoinLbl.Size = new System.Drawing.Size(0, 31);
+            this.instructoinLbl.TabIndex = 37;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(233, 733);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(0, 42);
+            this.label4.TabIndex = 38;
+            // 
             // MuiltiplayerPingPongController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.instructoinLbl);
             this.Controls.Add(this.player2scoreLbl);
             this.Controls.Add(this.player1scoreLbl);
             this.Controls.Add(this.Player1);
@@ -221,5 +244,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox Ball;
         private System.Windows.Forms.Timer PongTimer;
+        private System.Windows.Forms.Label instructoinLbl;
+        private System.Windows.Forms.Label label4;
     }
 }

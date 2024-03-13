@@ -14,6 +14,8 @@ namespace ST10109482_Mini_Game_ICE_1.UserControls
 {
     public partial class ComputerPingPongController : UserControl
     {
+        SoundPlayer sound = new SoundPlayer();
+
         string playerOneName = "";       
 
         int ballxSpeed = 4;
@@ -214,6 +216,20 @@ namespace ST10109482_Mini_Game_ICE_1.UserControls
             {
                 GameOver("Player 1 Wins");
             }
+        }
+
+        private void SoundBtn_Click(object sender, EventArgs e)
+        {
+            sound.SoundLocation = "backgroundSong.wav";
+            sound.Stop();
+        }
+
+        //-----------------------------------------------------
+
+        private void SoundOnBtn_Click(object sender, EventArgs e)
+        {
+            sound.SoundLocation = "backgroundSong.wav";
+            sound.PlayLooping();
         }
 
         //-----------------------------------------------------

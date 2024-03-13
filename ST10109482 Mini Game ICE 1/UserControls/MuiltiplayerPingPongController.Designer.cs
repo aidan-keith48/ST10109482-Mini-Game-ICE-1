@@ -44,6 +44,8 @@
             this.PongTimer = new System.Windows.Forms.Timer(this.components);
             this.instructoinLbl = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.SoundBtn = new System.Windows.Forms.Button();
+            this.SoundOnBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Player1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Player2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -95,7 +97,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.SkyBlue;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(458, 277);
+            this.label3.Location = new System.Drawing.Point(458, 221);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(533, 55);
             this.label3.TabIndex = 32;
@@ -103,7 +105,7 @@
             // 
             // startBtn
             // 
-            this.startBtn.Location = new System.Drawing.Point(764, 619);
+            this.startBtn.Location = new System.Drawing.Point(764, 611);
             this.startBtn.Name = "startBtn";
             this.startBtn.Size = new System.Drawing.Size(319, 61);
             this.startBtn.TabIndex = 30;
@@ -113,7 +115,7 @@
             // 
             // playerTwoNameTxt
             // 
-            this.playerTwoNameTxt.Location = new System.Drawing.Point(764, 508);
+            this.playerTwoNameTxt.Location = new System.Drawing.Point(764, 452);
             this.playerTwoNameTxt.Multiline = true;
             this.playerTwoNameTxt.Name = "playerTwoNameTxt";
             this.playerTwoNameTxt.Size = new System.Drawing.Size(319, 50);
@@ -121,7 +123,7 @@
             // 
             // playerOneNameTxt
             // 
-            this.playerOneNameTxt.Location = new System.Drawing.Point(764, 388);
+            this.playerOneNameTxt.Location = new System.Drawing.Point(764, 332);
             this.playerOneNameTxt.Multiline = true;
             this.playerOneNameTxt.Name = "playerOneNameTxt";
             this.playerOneNameTxt.Size = new System.Drawing.Size(319, 50);
@@ -133,7 +135,7 @@
             this.label2.BackColor = System.Drawing.Color.SkyBlue;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(216, 507);
+            this.label2.Location = new System.Drawing.Point(216, 451);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(489, 51);
             this.label2.TabIndex = 27;
@@ -145,7 +147,7 @@
             this.label1.BackColor = System.Drawing.Color.SkyBlue;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(216, 387);
+            this.label1.Location = new System.Drawing.Point(216, 331);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(489, 51);
             this.label1.TabIndex = 26;
@@ -154,16 +156,16 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.SkyBlue;
-            this.pictureBox1.Location = new System.Drawing.Point(184, 239);
+            this.pictureBox1.Location = new System.Drawing.Point(184, 183);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1081, 499);
+            this.pictureBox1.Size = new System.Drawing.Size(1081, 598);
             this.pictureBox1.TabIndex = 31;
             this.pictureBox1.TabStop = false;
             // 
             // Ball
             // 
             this.Ball.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.Ball.Location = new System.Drawing.Point(708, 173);
+            this.Ball.Location = new System.Drawing.Point(708, 117);
             this.Ball.Margin = new System.Windows.Forms.Padding(4);
             this.Ball.Name = "Ball";
             this.Ball.Size = new System.Drawing.Size(32, 33);
@@ -182,7 +184,7 @@
             this.instructoinLbl.AutoSize = true;
             this.instructoinLbl.BackColor = System.Drawing.Color.SkyBlue;
             this.instructoinLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.instructoinLbl.Location = new System.Drawing.Point(746, 446);
+            this.instructoinLbl.Location = new System.Drawing.Point(746, 390);
             this.instructoinLbl.Name = "instructoinLbl";
             this.instructoinLbl.Size = new System.Drawing.Size(0, 31);
             this.instructoinLbl.TabIndex = 37;
@@ -191,15 +193,39 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(233, 733);
+            this.label4.Location = new System.Drawing.Point(233, 677);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(0, 42);
             this.label4.TabIndex = 38;
+            // 
+            // SoundBtn
+            // 
+            this.SoundBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SoundBtn.Location = new System.Drawing.Point(596, 532);
+            this.SoundBtn.Name = "SoundBtn";
+            this.SoundBtn.Size = new System.Drawing.Size(291, 55);
+            this.SoundBtn.TabIndex = 39;
+            this.SoundBtn.Text = "Sound Off";
+            this.SoundBtn.UseVisualStyleBackColor = true;
+            this.SoundBtn.Click += new System.EventHandler(this.SoundBtn_Click);
+            // 
+            // SoundOnBtn
+            // 
+            this.SoundOnBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SoundOnBtn.Location = new System.Drawing.Point(926, 532);
+            this.SoundOnBtn.Name = "SoundOnBtn";
+            this.SoundOnBtn.Size = new System.Drawing.Size(291, 55);
+            this.SoundOnBtn.TabIndex = 40;
+            this.SoundOnBtn.Text = "Sound On";
+            this.SoundOnBtn.UseVisualStyleBackColor = true;
+            this.SoundOnBtn.Click += new System.EventHandler(this.SoundOnBtn_Click);
             // 
             // MuiltiplayerPingPongController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.SoundOnBtn);
+            this.Controls.Add(this.SoundBtn);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.instructoinLbl);
             this.Controls.Add(this.player2scoreLbl);
@@ -218,8 +244,6 @@
             this.Size = new System.Drawing.Size(1493, 922);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyIsDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyIsUp);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MovePlayer2Down);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MovePlayer2Up);
             ((System.ComponentModel.ISupportInitialize)(this.Player1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Player2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -246,5 +270,7 @@
         private System.Windows.Forms.Timer PongTimer;
         private System.Windows.Forms.Label instructoinLbl;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button SoundBtn;
+        private System.Windows.Forms.Button SoundOnBtn;
     }
 }

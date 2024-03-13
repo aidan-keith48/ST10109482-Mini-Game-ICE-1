@@ -40,6 +40,8 @@
             this.CPU = new System.Windows.Forms.PictureBox();
             this.Ball = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.SoundBtn = new System.Windows.Forms.Button();
+            this.SoundOnBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Player1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CPU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ball)).BeginInit();
@@ -74,7 +76,7 @@
             // 
             // startBtn
             // 
-            this.startBtn.Location = new System.Drawing.Point(761, 470);
+            this.startBtn.Location = new System.Drawing.Point(761, 549);
             this.startBtn.Name = "startBtn";
             this.startBtn.Size = new System.Drawing.Size(319, 61);
             this.startBtn.TabIndex = 18;
@@ -149,14 +151,38 @@
             this.pictureBox1.BackColor = System.Drawing.Color.SkyBlue;
             this.pictureBox1.Location = new System.Drawing.Point(181, 212);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1081, 392);
+            this.pictureBox1.Size = new System.Drawing.Size(1081, 475);
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
+            // 
+            // SoundBtn
+            // 
+            this.SoundBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SoundBtn.Location = new System.Drawing.Point(602, 455);
+            this.SoundBtn.Name = "SoundBtn";
+            this.SoundBtn.Size = new System.Drawing.Size(291, 55);
+            this.SoundBtn.TabIndex = 40;
+            this.SoundBtn.Text = "Sound Off";
+            this.SoundBtn.UseVisualStyleBackColor = true;
+            this.SoundBtn.Click += new System.EventHandler(this.SoundBtn_Click);
+            // 
+            // SoundOnBtn
+            // 
+            this.SoundOnBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SoundOnBtn.Location = new System.Drawing.Point(927, 455);
+            this.SoundOnBtn.Name = "SoundOnBtn";
+            this.SoundOnBtn.Size = new System.Drawing.Size(291, 55);
+            this.SoundOnBtn.TabIndex = 41;
+            this.SoundOnBtn.Text = "Sound On";
+            this.SoundOnBtn.UseVisualStyleBackColor = true;
+            this.SoundOnBtn.Click += new System.EventHandler(this.SoundOnBtn_Click);
             // 
             // ComputerPingPongController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.SoundOnBtn);
+            this.Controls.Add(this.SoundBtn);
             this.Controls.Add(this.cpuscoreLbl);
             this.Controls.Add(this.player1scoreLbl);
             this.Controls.Add(this.Player1);
@@ -194,5 +220,7 @@
         private System.Windows.Forms.Label player1scoreLbl;
         private System.Windows.Forms.Label cpuscoreLbl;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button SoundBtn;
+        private System.Windows.Forms.Button SoundOnBtn;
     }
 }

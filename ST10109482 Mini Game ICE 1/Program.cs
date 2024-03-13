@@ -17,6 +17,7 @@ namespace ST10109482_Mini_Game_ICE_1
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new StartScreenForm());
+            //Application.Run(new SecretFolder.SecreteForm());
         }
     }
 }

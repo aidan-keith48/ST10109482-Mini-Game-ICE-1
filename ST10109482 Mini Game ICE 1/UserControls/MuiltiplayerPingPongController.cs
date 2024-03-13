@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,6 +13,7 @@ namespace ST10109482_Mini_Game_ICE_1.UserControls
 {
     public partial class MuiltiplayerPingPongController : UserControl
     {
+        SoundPlayer sound = new SoundPlayer();
 
         string playerOneName = "";
         string playerTwoName = "";
@@ -30,13 +32,13 @@ namespace ST10109482_Mini_Game_ICE_1.UserControls
         int player2_score = 0;
 
         int playerSpeed = 12;
-        int[] i = { 5, 6, 8, 9 };
-        int[] j = { 10, 9, 8, 11, 12 };
+        int[] i = { 8, 11, 14, 5 };
+        int[] j = { 14, 9, 8, 11, 12 };
 
         public MuiltiplayerPingPongController()
         {
             InitializeComponent();
-            PongTimer.Stop();            
+            PongTimer.Stop();   
         }
 
         //-----------------------------------------------------
@@ -124,6 +126,12 @@ namespace ST10109482_Mini_Game_ICE_1.UserControls
             {
                 goUp = true;
             }
+
+            if(e.KeyCode == Keys.Escape)
+            {
+                PongTimer.Stop();
+                this.Dispose();
+            }
         }
 
         //-----------------------------------------------------
@@ -187,6 +195,8 @@ namespace ST10109482_Mini_Game_ICE_1.UserControls
             label2.Dispose();
             this.pictureBox1.Dispose();
             this.label3.Dispose();
+            this.SoundBtn.Dispose();
+            this.SoundOnBtn.Dispose();
         }
 
         //-----------------------------------------------------
@@ -219,6 +229,18 @@ namespace ST10109482_Mini_Game_ICE_1.UserControls
                 }
 
             }
+        }
+
+        private void SoundBtn_Click(object sender, EventArgs e)
+        {
+            sound.SoundLocation = "backgroundSong.wav";
+            sound.Stop();
+        }
+
+        private void SoundOnBtn_Click(object sender, EventArgs e)
+        {
+            sound.SoundLocation = "backgroundSong.wav";
+            sound.PlayLooping();
         }
 
         //-----------------------------------------------------

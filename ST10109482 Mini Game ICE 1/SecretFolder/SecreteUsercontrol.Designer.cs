@@ -47,16 +47,17 @@
             this.racket.Size = new System.Drawing.Size(307, 50);
             this.racket.TabIndex = 0;
             this.racket.TabStop = false;
-            this.racket.Click += new System.EventHandler(this.pictureBox1_Click);
+            //this.racket.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // ball
             // 
             this.ball.BackColor = System.Drawing.Color.IndianRed;
-            this.ball.Location = new System.Drawing.Point(642, 718);
+            this.ball.Location = new System.Drawing.Point(628, 215);
             this.ball.Name = "ball";
             this.ball.Size = new System.Drawing.Size(34, 32);
             this.ball.TabIndex = 1;
             this.ball.TabStop = false;
+            //this.ball.Click += new System.EventHandler(this.ball_Click);
             // 
             // racketTimer
             // 
@@ -93,8 +94,8 @@
             this.Controls.Add(this.playground);
             this.Name = "SecreteUsercontrol";
             this.Size = new System.Drawing.Size(1286, 884);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyIsDown);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyIsUp);
+           // this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyIsDown);
+           // this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyIsUp);
             ((System.ComponentModel.ISupportInitialize)(this.racket)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ball)).EndInit();
             this.playground.ResumeLayout(false);

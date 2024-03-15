@@ -1,0 +1,10 @@
+Pattern Group: Behavioural
+
+Pattern Type: Observer Pattern
+
+Problem Description:
+
+Numerous medical gadgets track patients' vital signs, including heart rate, blood pressure, and oxygen levels, in a busy hospital. When a patient's condition unexpectedly changes or when any vital indicator crosses a crucial threshold, medical staff must be alerted right away. However, physically checking every gadget all the time takes a lot of time and is prone to mistakes, which can delay patient treatment and have unfavorable effects.
+
+Proposed Solution:
+This issue can be successfully resolved by using the Observer Pattern. The medical personnel in charge of keeping an eye on patients' situations act as observers, and each medical gadget acts as a subject. The corresponding medical equipment immediately tells all registered observers when a vital sign reading changes considerably. Based on the notifications, the observers can then take the necessary measures, such giving medication, requesting help, or modifying treatment plans. This real-time monitoring system increases overall healthcare delivery efficiency, improves patient safety, and shortens response times to important incidents.

@@ -140,6 +140,7 @@
   <ItemGroup>
     <Content Include="backgroundSong.wav" />
     <Content Include="cpuvoice.mp3" />
+    <Content Include="Resources\boing.wav" />
     <Content Include="speech.mp3" />
     <Content Include="startvoice.mp3" />
   </ItemGroup>

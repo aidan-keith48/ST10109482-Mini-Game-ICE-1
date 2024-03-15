@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
 using System.Media;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,7 +17,7 @@ namespace ST10109482_Mini_Game_ICE_1.UserControls
     {
         SoundPlayer sound = new SoundPlayer();
 
-        string playerOneName = "";       
+        string playerOneName = "";
 
         int ballxSpeed = 4;
         int ballySpeed = 4;
@@ -37,7 +38,7 @@ namespace ST10109482_Mini_Game_ICE_1.UserControls
         public ComputerPingPongController()
         {
             InitializeComponent();
-            PongTimer.Stop();            
+            PongTimer.Stop();
         }
 
         //-----------------------------------------------------       
@@ -46,10 +47,14 @@ namespace ST10109482_Mini_Game_ICE_1.UserControls
         {
             this.MainEvent();
         }
-      
 
         //-----------------------------------------------------
 
+        /// <summary>
+        /// This method is used to handle the key down event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void KeyIsDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.S)
@@ -61,10 +66,34 @@ namespace ST10109482_Mini_Game_ICE_1.UserControls
             {
                 goUp = true;
             }
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                sound.Stop();
+                sound.SoundLocation = "backgroundSong.wav";
+                sound.Play();
+                PongTimer.Start();
+            }
+
+            if (e.KeyCode == Keys.Escape)
+            {               
+                PongTimer.Stop();
+                // Find the parent Form and remove this UserControl
+                Form parentForm = this.FindForm();
+                if (parentForm != null)
+                {
+                    parentForm.Close();
+                }
+            }
         }
 
         //-----------------------------------------------------
 
+        /// <summary>
+        /// This method is used to handle the key up event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void KeyIsUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.S)
@@ -80,6 +109,12 @@ namespace ST10109482_Mini_Game_ICE_1.UserControls
 
         //-----------------------------------------------------
 
+        /// <summary>
+        /// This method is used to check the collision between the ball and the player
+        /// </summary>
+        /// <param name="box1"></param>
+        /// <param name="box2"></param>
+        /// <param name="offset"></param>
         private void CheckCollision(PictureBox box1, PictureBox box2, int offset)
         {
             if (box1.Bounds.IntersectsWith(box2.Bounds))
@@ -112,34 +147,59 @@ namespace ST10109482_Mini_Game_ICE_1.UserControls
 
         //-----------------------------------------------------
 
+        /// <summary>
+        /// This method is used to handle the game over event
+        /// </summary>
+        /// <param name="message"></param>
         private void GameOver(string message)
         {
             PongTimer.Stop();
-            MessageBox.Show(message, "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(message, "Game Over Press Enter to start Again", MessageBoxButtons.OK, MessageBoxIcon.Information);
             cpuScore = 0;
             player1_score = 0;
             ballxSpeed = ballySpeed = 4;
             computer_speed_change = 50;
-            PongTimer.Start();
+            sound.SoundLocation = "backgroundSong.wav";
+            sound.Play();
         }
 
+        //-----------------------------------------------------
+
+        /// <summary>
+        /// This method is used to handle the start button click event and dispose all the controls
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void startBtn_Click(object sender, EventArgs e)
         {
-            playerOneName = playerOneNameTxt.Text;            
-            PongTimer.Start();
-            startBtn.Dispose();            
-            playerOneNameTxt.Dispose();
-            label1.Dispose();            
-            this.pictureBox1.Dispose();
-            this.label3.Dispose();
-            
+            DisploseAllControls();
         }
         //-----------------------------------------------------
 
+        /// <summary>
+        ///  This nmethod is used to dispose all the controls
+        /// </summary>
+        public void DisploseAllControls()
+        {
+            playerOneName = playerOneNameTxt.Text;
+            PongTimer.Start();
+            startBtn.Dispose();
+            playerOneNameTxt.Dispose();
+            label1.Dispose();
+           
+            this.pictureBox1.Dispose();
+            this.label3.Dispose();
+            this.SoundBtn.Dispose();
+            this.SoundOnBtn.Dispose();
+        }
+
+        //-----------------------------------------------------
+
+        /// <summary>
+        /// This method is used to handle the main event and all the game logic that happens in the game
+        /// </summary>
         private void MainEvent()
         {
-
-
             Ball.Top -= ballySpeed;
             Ball.Left -= ballxSpeed;
 
@@ -208,15 +268,23 @@ namespace ST10109482_Mini_Game_ICE_1.UserControls
             CheckCollision(Ball, Player1, Player1.Right + 5);
             CheckCollision(Ball, CPU, CPU.Left - 35);
 
-            if (cpuScore > 10)
-            {
+            if (cpuScore > 1)
+            {      
+                sound.Stop();
                 GameOver("CPU Wins");
+                sound.SoundLocation = "success-1-6297.wav";
+                sound.Play();
             }
-            else if (player1_score > 10)
-            {
+            else if (player1_score > 1)
+            {               
+                sound.Stop();
                 GameOver("Player 1 Wins");
+                sound.SoundLocation = "success-1-6297.wav";
+                sound.Play();
             }
         }
+
+        //-----------------------------------------------------
 
         private void SoundBtn_Click(object sender, EventArgs e)
         {
@@ -234,19 +302,22 @@ namespace ST10109482_Mini_Game_ICE_1.UserControls
 
         //-----------------------------------------------------
 
+        /// <summary>
+        /// This method is used to change the form color on collision
+        /// </summary>
         private void ChangeFormColor()
         {
             Random random = new Random();
 
-            int red = random.Next(0,256); // Generate a random value between 0 and 255 for red component
-            int green = random.Next(0,256); // Generate a random value between 0 and 255 for green component
-            int blue = random.Next(0,256); // Generate a random value between 0 and 255 for blue component
+            int red = random.Next(0, 256); // Generate a random value between 0 and 255 for red component
+            int green = random.Next(0, 256); // Generate a random value between 0 and 255 for green component
+            int blue = random.Next(0, 256); // Generate a random value between 0 and 255 for blue component
 
             // Create a new Color object with the random RGB values
             Color randomColor = Color.FromArgb(red, green, blue);
 
             // Set the form's background color to the random color
-            this.BackColor = randomColor;            
+            this.BackColor = randomColor;
         }
 
         //-----------------------------------------------------

@@ -30,5 +30,10 @@ namespace ST10109482_Mini_Game_ICE_1.SecretFolder
         {
 
         }
+
+        private void secreteUsercontrol1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

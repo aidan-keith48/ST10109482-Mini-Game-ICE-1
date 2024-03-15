@@ -41,11 +41,12 @@
             // 
             // secreteUsercontrol1
             // 
-            this.secreteUsercontrol1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(96)))), ((int)(((byte)(139)))));
-            this.secreteUsercontrol1.Location = new System.Drawing.Point(0, 0);
+            this.secreteUsercontrol1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(217)))), ((int)(((byte)(230)))));
+            this.secreteUsercontrol1.Location = new System.Drawing.Point(-2, -2);
             this.secreteUsercontrol1.Name = "secreteUsercontrol1";
-            this.secreteUsercontrol1.Size = new System.Drawing.Size(1196, 877);
+            this.secreteUsercontrol1.Size = new System.Drawing.Size(1203, 914);
             this.secreteUsercontrol1.TabIndex = 0;
+            this.secreteUsercontrol1.Load += new System.EventHandler(this.secreteUsercontrol1_Load);
             // 
             // SecreteForm
             // 
